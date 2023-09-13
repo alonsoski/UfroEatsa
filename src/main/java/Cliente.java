@@ -1,4 +1,3 @@
-//package org.example;
 
 import java.io.*;
 import java.net.Socket;
@@ -126,5 +125,8 @@ public class Cliente {
             System.out.println("eso no se puede");
         }
         return eleccion;
+    }
+    public static void avece(){
+        System.out.println("aaa");
     }
 }
