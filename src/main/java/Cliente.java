@@ -7,14 +7,63 @@ import java.util.Scanner;
 
 public class Cliente {
     public static void main(String[] args) {
-        while (true){
-            printMenu();
+
+        menuLobby();
+        //printMenu();
+
+
+    }
+
+    private static void menuLobby() {
+        int eleccion=0;
+        System.out.println("Bienvenido a UfroEats");
+        System.out.println("que quieres hacer?");
+        while (eleccion<1 || eleccion>3){
+            System.out.println("1.-Iniciar sesion");
+            System.out.println("2.-Crear usuario");
+            System.out.println("3.-Salir");
+            eleccion = eleccion(3);
+        }
+        switchLobby(eleccion);
+    }
+
+    private static void switchLobby(int eleccion) {
+        switch (eleccion){
+            case 1:
+                iniciarSesion();
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                System.out.println("Ok, adios");
+                break;
+        }
+    }
+
+    private static void iniciarSesion() {
+        Scanner t= new Scanner(System.in);
+        System.out.println("Escriba su correo electronico");
+        String nombre=t.nextLine();
+        System.out.println("Escriba su contraseña");
+        String contrasena=t.nextLine();
+        Usuario u = new Usuario(nombre,contrasena);
+        if (u.usuarioExiste()){
+            if (u.contraCorrecta(contrasena)){
+                System.out.println("has ingresado");
+                printMenu(nombre);
+            }else{
+                System.out.println("Correo o contraseña incorrectos");
+            }
+        }else {
+            System.out.println("Correo o contraseña incorrectos");
+            menuLobby();
         }
 
     }
 
-    private static void printMenu() {
-        System.out.println("Bienvenido a UfroEats");
+    private static void printMenu(String correo) {
+
         System.out.println("que quieres hacer?");
         int eleccion = 0;
         while (eleccion<1 || eleccion>3){
