@@ -126,5 +126,21 @@ public class Servidor extends Thread{
         }
     }
 
-    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    /*
+    public static boolean revisarStock(int nItem){
+
+        boolean hayStock=true;
+
+
+
+        for (i=0, i=nItem, i++) {
+
+            if (i=nItem && listaStock[i]=0){
+                hayStock=false;
+            }
+
+        }
+
+        return hayStock;
+    }/*
 }
