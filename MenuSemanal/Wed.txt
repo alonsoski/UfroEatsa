@@ -1,6 +1,0 @@
-Comida3/
-Ingrediente1/
-Ingrediente2/
-Ingrediente3/
-Ingrediente4/
-Ingrediente5
